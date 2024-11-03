@@ -1,0 +1,13 @@
+configuration:
+  server:
+    name: Serwer
+    description: Adres serwera FRP
+  token:
+    name: Hasło
+    description: Hasło do serwera FRP
+  subdomain:
+    name: Subdomena
+    description: Wymagany format "<dowolne_znaki>-frp"
+  proxy_name:
+    name: Nazwa użytkownika (widoczna dla usługodawcy)
+    description: np. Andrzej Kowalski
