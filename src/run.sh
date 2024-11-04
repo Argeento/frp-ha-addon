@@ -50,6 +50,10 @@ else
     exit 3
 fi
 
+# Wyświetlanie zawartości options.json w czytelnym formacie
+echo "Zawartość pliku options.json:"
+cat /data/options.json | jq .
+
 # Wczytanie konfiguracji add-onu Home Assistant
 SERVER_ADDRESS=$(jq --raw-output '.server' /data/options.json)
 AUTH_TOKEN=$(jq --raw-output '.token' /data/options.json)
@@ -78,7 +82,6 @@ sed -i "s|__arg_local_port__|$LOCAL_PORT|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_use_encryption__|$USE_ENCRYPTION|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_use_compression__|$USE_COMPRESSION|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_protocol__|$PROTOCOL|g" $FRP_CONFIG_PATH
-
 
 # Uruchomienie klienta FRP
 echo "Uruchamianie klienta FRP..."
