@@ -55,6 +55,10 @@ SERVER_ADDRESS=$(jq --raw-output '.server' /data/options.json)
 AUTH_TOKEN=$(jq --raw-output '.token' /data/options.json)
 SUBDOMAIN=$(jq --raw-output '.subdomain' /data/options.json)
 PROXY_NAME=$(jq --raw-output '.proxy_name' /data/options.json)
+LOCAL_PORT=$(jq --raw-output '.local_port' /data/options.json)
+USE_ENCRYPTION=$(jq --raw-output '.use_encryption' /data/options.json)
+USE_COMPRESSION=$(jq --raw-output '.use_compression' /data/options.json)
+PROTOCOL=$(jq --raw-output '.protocol' /data/options.json)
 
 # Ścieżka do pliku konfiguracyjnego FRP
 FRP_CONFIG_PATH="./frpc.toml"
@@ -70,6 +74,11 @@ sed -i "s|__arg_server_address__|$SERVER_ADDRESS|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_auth_token__|$AUTH_TOKEN|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_subdomain__|$SUBDOMAIN|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_proxy_name__|$PROXY_NAME|g" $FRP_CONFIG_PATH
+sed -i "s|__arg_local_port__|$LOCAL_PORT|g" $FRP_CONFIG_PATH
+sed -i "s|__arg_use_encryption__|$USE_ENCRYPTION|g" $FRP_CONFIG_PATH
+sed -i "s|__arg_use_compression__|$USE_COMPRESSION|g" $FRP_CONFIG_PATH
+sed -i "s|__arg_protocol__|$PROTOCOL|g" $FRP_CONFIG_PATH
+
 
 # Uruchomienie klienta FRP
 echo "Uruchamianie klienta FRP..."

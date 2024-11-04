@@ -11,3 +11,18 @@ configuration:
   proxy_name:
     name: Nazwa użytkownika (widoczna dla usługodawcy)
     description: np. Andrzej Kowalski
+  protocol:
+    name: Protokół
+    description: Wybierz protokół
+    options:
+      http: HTTP
+      https: HTTPS
+  port:
+    name: Port
+    description: Port na którym działa Home Assistant
+  useEncryption:
+    name: Szyfrowanie
+    description: Czy używać szyfrowania
+  useCompression:
+    name: Kompresja
+    description: Czy używać kompresji
