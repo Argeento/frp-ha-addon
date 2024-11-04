@@ -5,7 +5,7 @@ configuration:
     name: Hasło
   subdomain:
     name: Subdomena
-    description: Wymagany format <dowolne_znaki>-frp
+    description: Twój HA będzie dostępny pod adresem <subdomena>.frp.devly.pl
   proxy_name:
     name: Nazwa użytkownika (widoczna dla usługodawcy)
   protocol:
@@ -19,4 +19,3 @@ configuration:
     name: Szyfrowanie
   useCompression:
     name: Kompresja
-
