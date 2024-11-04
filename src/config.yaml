@@ -1,7 +1,7 @@
 name: "FRP HA"
 description: "Klient FRP dla Home Assistant"
-version: "1.1.1"
-slug: "frp_ha"
+version: "1.1.2"
+slug: "frp_ha_addon"
 host_network: true
 init: false
 arch:
