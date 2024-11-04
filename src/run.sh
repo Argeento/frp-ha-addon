@@ -75,6 +75,7 @@ localPort = $LOCAL_PORT
 subdomain = "$SUBDOMAIN"
 transport.useEncryption = $USE_ENCRYPTION
 transport.useCompression = $USE_COMPRESSION
+server = "$SERVER_ADDRESS"
 EOF
 
 # Wyświetlenie zawartości pliku frpc.toml po dokonaniu zmian
