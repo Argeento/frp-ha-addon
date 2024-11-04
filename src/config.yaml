@@ -1,6 +1,6 @@
 name: "FRP HA"
 description: "Klient FRP dla Home Assistant"
-version: "1.1.5"
+version: "1.1.6"
 slug: "frp_ha_addon"
 host_network: true
 init: false
@@ -21,15 +21,14 @@ devices:
   - /dev/net/tun
 options:
   port: 8123
-  subdomain: "match(^[a-zA-Z]*-frp$)"
-  useCompression: true
-  useEncryption: true
+  useCompression: false
+  useEncryption: false
 schema:
   server: str
   token: str
   proxy_name: str
   protocol: "list(http|https)"
-  subdomain: str
+  subdomain: "match(^[a-zA-Z]*-frp$)"
   port: int
   useCompression: bool
   useEncryption: bool
