@@ -67,6 +67,12 @@ PROTOCOL=$(jq --raw-output '.protocol' /data/options.json)
 # Tworzenie pliku konfiguracyjnego frpc.toml bezpośrednio
 FRP_CONFIG_PATH="./frpc.toml"
 cat <<EOF > $FRP_CONFIG_PATH
+serverAddr = "$SERVER_ADDRESS"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "$AUTH_TOKEN"
+
 [[proxies]]
 name = "$PROXY_NAME"
 type = "$PROTOCOL"
@@ -75,7 +81,6 @@ localPort = $LOCAL_PORT
 subdomain = "$SUBDOMAIN"
 transport.useEncryption = $USE_ENCRYPTION
 transport.useCompression = $USE_COMPRESSION
-server = "$SERVER_ADDRESS"
 EOF
 
 # Wyświetlenie zawartości pliku frpc.toml po dokonaniu zmian
