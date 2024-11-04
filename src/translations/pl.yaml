@@ -1,28 +1,22 @@
 configuration:
   server:
-    name: Serwer
-    description: Adres serwera FRP
+    name: Adres serwera
   token:
     name: Hasło
-    description: Hasło do serwera FRP
   subdomain:
     name: Subdomena
-    description: Wymagany format "<dowolne_znaki>-frp"
+    description: Wymagany format <dowolne_znaki>-frp
   proxy_name:
     name: Nazwa użytkownika (widoczna dla usługodawcy)
-    description: np. Andrzej Kowalski
   protocol:
     name: Protokół
-    description: Wybierz protokół
     options:
       http: HTTP
       https: HTTPS
   port:
     name: Port
-    description: Port na którym działa Home Assistant
   useEncryption:
     name: Szyfrowanie
-    description: Czy używać szyfrowania
   useCompression:
     name: Kompresja
-    description: Czy używać kompresji
+
