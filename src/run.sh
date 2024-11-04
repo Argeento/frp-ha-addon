@@ -78,7 +78,7 @@ name = "$PROXY_NAME"
 type = "$PROTOCOL"
 localIP = "127.0.0.1"
 localPort = $LOCAL_PORT
-subdomain = "$SUBDOMAIN"
+subdomain = "$SUBDOMAIN-frp"
 transport.useEncryption = $USE_ENCRYPTION
 transport.useCompression = $USE_COMPRESSION
 EOF
