@@ -1,6 +1,6 @@
 name: "FRP HA"
 description: "Klient FRP dla Home Assistant"
-version: "1.1.0"
+version: "1.1.1"
 slug: "frp_ha"
 host_network: true
 init: false
@@ -13,7 +13,8 @@ arch:
 startup: application
 boot: "auto"
 map:
-  - "share:rw"
+  - type: share
+    read_only: false
 privileged:
   - NET_ADMIN
 devices:
@@ -23,7 +24,14 @@ schema:
   token: str
   subdomain: str
   proxy_name: str
-  protocol: "list(http|https)"
-  port: "int(1, 65535)"
+  protocol:
+    type: select
+    options:
+      - http
+      - https
+  port:
+    type: int
+    minimum: 1
+    maximum: 65535
   useCompression: bool
   useEncryption: bool
