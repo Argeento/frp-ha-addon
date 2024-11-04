@@ -83,6 +83,10 @@ sed -i "s|__arg_use_encryption__|$USE_ENCRYPTION|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_use_compression__|$USE_COMPRESSION|g" $FRP_CONFIG_PATH
 sed -i "s|__arg_protocol__|$PROTOCOL|g" $FRP_CONFIG_PATH
 
+# Wyświetlenie zawartości pliku frpc.toml po dokonaniu zmian
+echo "Zawartość pliku frpc.toml po zmianach:"
+cat $FRP_CONFIG_PATH
+
 # Uruchomienie klienta FRP
 echo "Uruchamianie klienta FRP..."
 ./frp/frpc -c $FRP_CONFIG_PATH
